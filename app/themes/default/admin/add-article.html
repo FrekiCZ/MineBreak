@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minebreak - Administrace</title>
+  <link rel="shortcut icon" href="{THEME_DIR}favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{THEME_DIR}favicon.ico" type="image/x-icon">
+  <link href="{THEME_DIR}/admin/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{THEME_DIR}/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="{THEME_DIR}/admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+  <link href="{THEME_DIR}/admin/css/plugins/timeline/timeline.css" rel="stylesheet">
+  <link href="{THEME_DIR}/admin/css/sb-admin.css" rel="stylesheet">
+  <link href="{THEME_DIR}/admin/css/p-style.css" rel="stylesheet">
+  <script type="text/javascript" src="{THEME_DIR}admin/js/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/jadmin.js"></script>
+  <script type="text/javascript">CKEDITOR.replace('article_content');</script>
+ </head>
+ <body>
+  <div id="wrapper">
+  <!-- Top menu -->
+   <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+     </button>
+     <a class="navbar-brand" href="{WEB_HOST}admin">Minebreak - Administrace</a>
+    </div>
+     <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+       </a>
+       <ul class="dropdown-menu dropdown-user">
+        <li><a href="#"><i class="fa fa-user fa-fw"></i> Uživatelský profil</a></li>
+        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Nastavení</a></li>
+        <li class="divider"></li>
+        <li><a href="{BASENAME}/logout"><i class="fa fa-sign-out fa-fw"></i> Odhlásit se</a></li>
+       </ul>
+      </li>
+     </ul>
+   </nav>
+   <!-- Left menu -->
+   <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+     <ul class="nav" id="side-menu">
+     <li><a href="{BASENAME}/"><i class="glyphicon glyphicon-th-large"></i> Zobrazit web</a></li>
+      <li><a href="{BASENAME}/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+      <li><a href="#"><i class="glyphicon glyphicon-pushpin fa-fw"></i> Příspěvky<span class="fa arrow"></span></a>
+       <ul class="nav nav-second-level">
+        <li><a href="{BASENAME}/admin/articles">Přehled příspěvků</a></li>
+        <li><a href="{BASENAME}/admin/add-article">Vytvořit příspěvek</a></li>
+       </ul> 
+      </li>
+      <li><a href="#"><i class="glyphicon glyphicon-camera fa-fw"></i> Media<span class="fa arrow"></span></a>
+       <ul class="nav nav-second-level">
+        <li><a href="#">Knihovna medií</a></li>
+        <li><a href="{BASENAME}/admin/upload">Nahrát soubor</a></li>
+       </ul> 
+      </li>
+      <li><a href="#"><i class="glyphicon glyphicon-comment fa-fw"></i> Komentáře</a></li>
+      <li class="divider"></li>
+      <li class="divider"></li>
+      <li class="divider"></li>
+      <li class="divider"></li>
+      <li><a href="#"><i class="glyphicon glyphicon-user fa-fw"></i> Profil</a></li>
+      <li><a href="#"><i class="glyphicon glyphicon-user fa-fw"></i> Nástroje</a></li>
+     </ul>
+    </div>
+   </nav>
+   <!-- Content -->
+   <div id="page-wrapper">
+    <div class="row">
+     <div class="col-lg-12">
+      <h1 class="page-header">Administrace článků</h1>
+     </div>
+    </div>
+    <form action="" method="post">
+    <div class="row">
+     <div class="col-lg-10">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+        <i class="glyphicon glyphicon-pencil fa-fw"></i> Přidat článek
+        <span id="page-info">{MB_ADMIN_AC_INFO}</span>
+        <div class="pull-right">
+          <div class="btn-group">
+           <input type="submit" class="btn btn-success btn-xs dropdown-toggle" id="public-article" name="public" value="Publikovat">
+          </div>
+         </div>
+       </div>
+       <div class="panel-body">
+       
+        <div class="input-group">
+         <span class="input-group-addon">Název článku</span>
+         <input type="text" name="article-title" id="article-title" class="form-control">
+        </div><br>
+        
+        <p><button type="button" id="open-gallery" class="btn btn-default">Vybrat náhledový obrázek</button> <span id="selected-image"></span></p>
+        <input type="hidden" id="prew-img-id" name="prew-image" value="">
+        <p><button type="button" id="open-gallery-all" class="btn btn-default">Otevřít galerii</button></p>
+        <div class="input-group">
+         <textarea class="ckeditor" id=article_content name="article-content"></textarea>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    </form>
+   </div>
+  </div>
+  <div id="box-container-overlay">
+   <div id="box-container">
+    <div class="row">
+     <div class="col-lg-10">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+        <i class="glyphicon glyphicon-pencil fa-fw"></i> Gallerie
+        <div class="pull-right">
+          <div class="btn-group">
+           <input type="submit" class="btn btn-danger btn-xs dropdown-toggle close-gallery" name="public" value="Zavřít">
+          </div>
+         </div>
+       </div>
+       <div class="panel-body">
+        {MB_ADMIN_PAGE_GALLERIE}
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="box-container-overlay">
+   <div class="box-container-galery">
+    <div class="row">
+     <div class="col-lg-20">
+      <div class="panel panel-default">
+       <div class="panel-heading">
+        <i class="glyphicon glyphicon-pencil fa-fw"></i> Gallerie
+        <div class="pull-right">
+          <div class="btn-group">
+           <input type="submit" class="btn btn-danger btn-xs dropdown-toggle" id="close-gallery" name="public" value="Zavřít">
+          </div>
+         </div>
+       </div>
+       <div class="panel-body class min-g">
+        {MB_ADMIN_PAGE_GALLERIE_ALL}
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  
+  <script type="text/javascript" src="{THEME_DIR}admin/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/plugins/morris/raphael-2.1.0.min.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/plugins/morris/morris.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/sb-admin.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/demo/dashboard-demo.js"></script>
+  <script type="text/javascript" src="{THEME_DIR}admin/js/sb-admin.js"></script>
+  <script type="text/javascript" src="{ABS_PATH}ckeditor/ckeditor.js"></script>
+ </body>
+</html>

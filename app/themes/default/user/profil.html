@@ -1,0 +1,147 @@
+ <script type="text/javascript">
+  	create_toggle_element('.menu1_B', '.menu1', 100);
+  	create_toggle_element('.menu2_B', '.menu2', 100);
+  	create_toggle_element('.menu3_B', '.menu3', 100);
+  	create_toggle_element('.menu4_B', '.menu4', 100);
+ </script>
+  {MB_ADMIN_TOP_BAR}
+  <div class="head-container">
+   <div class="logo">
+    <a href="{WEB_HOST}"></a>
+   </div>
+   {MB_PANEL_USER}
+   <div class="clearfix"></div>
+  </div>
+  <div class="menu-container">
+    <ul>
+     <li class="news"><a href="{BASENAME}/hlavni-stranka/"></a></li>
+     <li class="mod"><a href="{BASENAME}/o-modu/"></a></li>
+     <li class="faq"><a href="{BASENAME}/faq/"></a></li>
+     <li class="contact"><a href="{BASENAME}/team/"></a></li>
+     <li class="vip"><a></a></li>
+     <li class="livestream">
+      <div class="livestream-status" class="nolive"></div>
+      <a href="{BASENAME}/livestream/"></a>
+     </li>
+     <li class="end"></li>
+    </ul>
+   </div>
+   <!-- Down menu -->
+   {MB_PAGE_UNDER_MENU}
+   <div class="content-top-bg"></div>
+   <div class="content-container">
+    <div class="left-content">
+     <div class="character-container">
+      <div class="character-head">
+       <div class="character-title">
+        <p>Charakter</p>
+       </div>
+       <div class="character-type">
+        <a href="{BASENAME}/profil/vezen"><i class="button-red-small">VĚZEŇ</i></a>
+        <a href="{BASENAME}/profil/dozorce"><i class="button-blue-small">DOZORCE</i></a>
+       </div>
+      </div>
+      <div class="character-content">
+       <div class="character-image">
+        <img src="{ABS_PATH}mb-upload/resources/characters/default.png">
+       </div>
+       <div class="character-info">
+        <div class="character-info-left">
+         <div class="character-info-username">
+          <p>{USER_USERNAME}</p>
+         </div>
+         <div class="character-info-type">{USER_GAME_TYPE}</div>
+        </div>
+        <div class="character-info-right">
+         <i class="button-red-smaller">lvl - {USER_LEVEL}</i>
+        </div>
+       </div>
+       <div class="character-data">
+        <div class="character-data-exp">Experience - {USER_XP}</div>
+        <div class="character-data-content">
+         <div class="character-data-content-top">
+          <i class="button-red-bigger">Cash: {USER_CASH} ,-</i>
+          <i class="button-red-bigger">MB Coin - 0</i>
+         </div>
+         <div class="character-data-content-down">
+           <div class="data-left">
+            <ul>
+             <li><p>Síla <span class="numb">{USER_STRENGTH}</span></p></li>
+             <li><p>Výdrž <span class="numb">{USER_STAMINA}</span></p></li>
+             <li><p>Obratnost <span class="numb">{USER_FACILITY}</span></p></li>
+             <li><p>Inteligence <span class="numb">{USER_INTELIGENCE}</span></p></li>
+             <li><p>Štěstí <span class="numb">{USER_LUCK}</span></p></li>
+            </ul>
+           </div>
+           <div class="data-right">
+            <div class="characted-data-upgrade">
+             <a href="#"></a>
+            </div>
+           </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="inventory-container">
+      <div class="title">Inventář</div>
+      <div class="inventory-content">
+       <div class="inventory">
+        {INVENTORY_SLOTS}
+        {INVENTORY_SLOT}
+        <div class="slot">
+         <a href="#" class="tooltip" tooltip-content="{INVENTORY_ITEM_NAME}">
+          <img src="{ABS_PATH}mb-upload/resources/items/{INVENTORY_ITEM_ID}">
+         </a>
+        </div>
+        {/INVENTORY_SLOT}
+        {INVENTORY_NULL_SLOT}
+        <div class="slot"></div>
+        {/INVENTORY_NULL_SLOT}
+       </div>
+       <div class="item-info">
+        
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="right-content">
+     <div class="sidebar">
+      <div class="sidebar-menu">
+       <a class="menu1_B button-green-2">Jak začít hrát</a>
+       <ul class="menu menu1 hidden">
+        <li><a href="#">Vězeň</a></li>
+        <li><a href="#">Dzorce</a></li>
+       </ul>
+       <a class="menu2_B button-blue-2">Itemy</a>
+       <ul class="menu menu2 hidden">
+        <li><a href="#">Upgrade</a></li>
+        <li><a href="#">Lektvary</a></li>
+       </ul>
+       <a class="menu3_B button-orange-2">Lokace</a>
+       <ul class="menu menu3 hidden">
+        <li><a href="#">Útěky</a></li>
+        <li><a href="#">Parkour</a></li>
+        <li><a href="#">Eventy</a></li>
+       </ul>
+       <a class="menu4_B button-purple-2">Obchod</a>
+       <ul class="menu menu4 hidden">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+       </ul>
+      </div>
+     </div>
+    {MB_SIDEBARS}
+    </div>
+   </div>
+   <div class="desing-logo-container">
+    <div class="desing-logo">
+     <a href="#"></a>
+    </div>
+    <div class="coder-logo">
+     <a href="http://xsc.cz"></a>
+    </div>
+   </div>
+   {MB_PAGE_BOTTOM_MENU}
+ 

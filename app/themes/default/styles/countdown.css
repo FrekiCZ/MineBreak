@@ -1,0 +1,55 @@
+.countDown_data .number {
+	color: rgba(20, 100, 200, 1);
+}
+
+.countDown_data .unit {
+	color: rgba(20, 100, 200, 1);
+	font-size: 12px;
+}
+
+.countDown_day {
+	float: left;
+	margin-right: 5px;
+	color: rgba(20, 100, 200, 1);
+}
+
+.countDown_hour {
+	float: left;
+	margin-right: 5px;
+	color: rgba(20, 100, 200, 1);
+}
+
+.countDown_min {
+	float: left;
+	margin-right: 5px;
+	color: rgba(20, 100, 200, 1);
+}
+
+.countDown_sec {
+	float: left;
+	margin-right: 5px;
+	color: rgba(20, 100, 200, 1);
+}
+
+.countDown_sec[data-time="0"] .number:before,
+.countDown_sec[data-time="1"] .number:before,
+.countDown_sec[data-time="2"] .number:before,
+.countDown_sec[data-time="3"] .number:before,
+.countDown_sec[data-time="4"] .number:before,
+.countDown_sec[data-time="5"] .number:before,
+.countDown_sec[data-time="6"] .number:before,
+.countDown_sec[data-time="7"] .number:before,
+.countDown_sec[data-time="8"] .number:before,
+.countDown_sec[data-time="9"] .number:before,
+.countDown_min[data-time="0"] .number:before,
+.countDown_min[data-time="1"] .number:before,
+.countDown_min[data-time="2"] .number:before,
+.countDown_min[data-time="3"] .number:before,
+.countDown_min[data-time="4"] .number:before,
+.countDown_min[data-time="5"] .number:before,
+.countDown_min[data-time="6"] .number:before,
+.countDown_min[data-time="7"] .number:before,
+.countDown_min[data-time="8"] .number:before,
+.countDown_min[data-time="9"] .number:before {
+  content: "0";
+}

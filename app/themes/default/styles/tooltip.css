@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'minecraftfont';
+	src: url('./font/minecraftfont.eot');
+	src: local('minecraftfont'), url('./font/minecraftfont.woff') format('woff'), url('./font/minecraftfont.ttf') format('truetype');
+}
+
+#tooltip {
+	border: 15px solid transparent;
+	border-image: url('http://srv1.freki.cz/tooltip.png') 30 30 stretch;
+	/*border: 3px solid black;*/
+	/*border-radius: 3px;*/
+	/*box-shadow: 0px 0px 5px gray;*/
+	display: none;
+	position: absolute;
+	/* font-family: Verdana, "Open Sans", Arial, "Helvetica Neue" ,Helvetica, sans-serif; */
+	font-size: 12px;
+	line-height: 17px;
+	color: white;
+}
+
+#tooltip #tooltip-content {
+	padding: 5px 10px 5px 10px;
+	font-family: 'minecraftfont' !important;
+	background: rgba(1, 7, 33, 0.8);
+	font-size: 14px;
+	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+	color: white;
+}
